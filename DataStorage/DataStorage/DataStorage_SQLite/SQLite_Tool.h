@@ -10,6 +10,11 @@
 #import <sqlite3.h>
 #import "Person.h"
 @interface SQLite_Tool : NSObject
-+ (void)dataBase;
-+ (void)save:(Person *)person;
++ (void)createDataBase;
++ (void)save:(Person *)perosn;
++ (void)update:(Person *)person;
++ (void)deletePerson:(Person *)person;
++ (void)deleteAll;
++ (NSArray *)getAll;
++ (Person *)getSomeOneByName:(NSString *)name;
 @end
