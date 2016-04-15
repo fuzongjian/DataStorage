@@ -22,6 +22,7 @@
 		504B3AB41CBE488300F7CD5B /* SQLite_Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 504B3AB31CBE488300F7CD5B /* SQLite_Tool.m */; };
 		504B3AB61CBE4C7900F7CD5B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 504B3AB51CBE4C7900F7CD5B /* libsqlite3.tbd */; };
 		504B3AB91CBE4EA800F7CD5B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 504B3AB81CBE4EA800F7CD5B /* Person.m */; };
+		5057D53B1CC0B4A200E017EA /* SQLite_Thread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5057D53A1CC0B4A200E017EA /* SQLite_Thread.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		504B3AB51CBE4C7900F7CD5B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		504B3AB71CBE4EA800F7CD5B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		504B3AB81CBE4EA800F7CD5B /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		5057D5391CC0B4A200E017EA /* SQLite_Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLite_Thread.h; sourceTree = "<group>"; };
+		5057D53A1CC0B4A200E017EA /* SQLite_Thread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLite_Thread.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 				504B3AB01CBE46F900F7CD5B /* SQLite_Test.m */,
 				504B3AB21CBE488300F7CD5B /* SQLite_Tool.h */,
 				504B3AB31CBE488300F7CD5B /* SQLite_Tool.m */,
+				5057D5391CC0B4A200E017EA /* SQLite_Thread.h */,
+				5057D53A1CC0B4A200E017EA /* SQLite_Thread.m */,
 				504B3AB71CBE4EA800F7CD5B /* Person.h */,
 				504B3AB81CBE4EA800F7CD5B /* Person.m */,
 			);
@@ -337,6 +342,7 @@
 				504B3AB91CBE4EA800F7CD5B /* Person.m in Sources */,
 				504B3AA61CBE2E1100F7CD5B /* Student.m in Sources */,
 				504B3AB41CBE488300F7CD5B /* SQLite_Tool.m in Sources */,
+				5057D53B1CC0B4A200E017EA /* SQLite_Thread.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +568,7 @@
 				504B3A9C1CBE2B6600F7CD5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		504B3A9D1CBE2B6600F7CD5B /* Build configuration list for PBXNativeTarget "DataStorageTests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +577,7 @@
 				504B3A9F1CBE2B6600F7CD5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		504B3AA01CBE2B6600F7CD5B /* Build configuration list for PBXNativeTarget "DataStorageUITests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +586,7 @@
 				504B3AA21CBE2B6600F7CD5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

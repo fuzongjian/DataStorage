@@ -26,7 +26,7 @@
  * sqlite3_prepare_v2
  
  *  SQLite将数据划分为以下几种存储类型：
- *  integer：整型值
+ *  int：整型值
  *  real：浮点型
  *  text：文本字符串
  *  blob：二进制数据（比如文件）
@@ -71,6 +71,7 @@
     dispatch_once(&onceToken, ^{
         NSString * doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         path = [doc stringByAppendingPathComponent:@"first.db"];
+         NSLog(@"%@",path);
     });
     return path;
 }
@@ -181,6 +182,11 @@
     [self cloesDataBase];
 }
 /**
+ *  sqlite3_step 和 sqlite3_exec 都可以用于执行SQL语句
+ *  区别：sqlite3_exec 是 sqlite3_prepare()、sqlite3_step()和sqlite3_finalize()的封装，只提供了一个最终的结果的处理，能让程序多次执行sql语句，减少代码量
+ */
+
+/**
  *  获取所有数据
  */
 + (NSArray *)getAll{
@@ -194,8 +200,12 @@
     //在这里设置具体查询要求（具体）              select * from t_person where name = 'fuzongjian'
     //模糊查询                                select * from t_person where name like 'lisi%%'
     //将筛选的结果降序排列                      select * from t_person where age like '%%2%%' order by age DESC
-    
-    NSString * sql = [NSString stringWithFormat:@"select * from t_person where age like '%%2%%' order by age DESC"];
+    // 逻辑运算符 and                         select * from t_person where name = 'lisis' and age = 929
+    //逻辑运算符 or in                        select * from t_person where name = 'lisis' or name = 'lisi2'
+    //  in (和上面异曲同工)                    select * from t_person where name in ('lisis','lisi2')
+    //  not in                               select * from t_person where name not in ('lisis','lisi2')
+    // between                              select * from t_person where age between 0 and 10
+    NSString * sql = [NSString stringWithFormat:@"select sum(age) from t_person"];
     sqlite3_stmt * stmt ;
     if (sqlite3_prepare_v2(_db, sql.UTF8String, -1, &stmt, nil) == SQLITE_OK) {
         //每调一次sqlite3_step函数，stmt就会指向下一条记录
@@ -242,6 +252,7 @@
             person.age = age;
         }
     }
+    sqlite3_finalize(stmt);
     return person;
 }
 @end

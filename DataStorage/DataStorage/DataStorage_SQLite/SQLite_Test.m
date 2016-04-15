@@ -9,6 +9,7 @@
 #import "SQLite_Test.h"
 #import "SQLite_Tool.h"
 #import "Person.h"
+#import "SQLite_Thread.h"
 @implementation SQLite_Test
 + (void)sqlite_test{
 //    [SQLite_Tool dataBase];
@@ -18,11 +19,11 @@
 //    /[SQLite_Tool getAll];
     
 //    for (Person * person in [SQLite_Tool getAll]) {
-//         NSLog(@"%d",person.age);
+//         NSLog(@"%d---%@",person.age,person.name);
 //    }
-    
-    Person * person = [SQLite_Tool getSomeOneByName:@"lisis"];
-    NSLog(@"%@---%d",person.name,person.age);
+    [SQLite_Thread sqlite_thread];
+//    Person * person = [SQLite_Tool getSomeOneByName:@"lisis"];
+//    NSLog(@"%@---%d",person.name,person.age);
     
 //    for (int i = 0; i < 10; i ++) {
 //        Person * person = [[Person alloc] init];
